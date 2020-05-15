@@ -14,7 +14,7 @@ for entry in entries:
     # converting images to binary and save it into the correspondent column
     with open(("/home/omer/Desktop/images/images/"+entry), "rb") as image_file:
         a = base64.b64encode(image_file.read())
-        image.append(a)
+        image.append(a.decode('utf-8'))
 
 data["code"] = code
 data["image"] = image
