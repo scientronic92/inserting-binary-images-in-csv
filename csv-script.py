@@ -25,7 +25,6 @@ with open('table.csv', 'r') as csv_file:
         for old_line in csv_reader:
 
             new_img = {"images(base64)" : ""}
-            new_line = dict(old_line, **new_img)
 
             for img in images:
                 # checking if the product code is equal to the image name
@@ -33,7 +32,7 @@ with open('table.csv', 'r') as csv_file:
                 if old_line['product_code'] == img[:-4]: 
                     new_img = {"images(base64)" : encode_image(img)}
                     # for combining two dictionaries into one
-                    new_line = dict(old_line, **new_img)
                     break
 
+            new_line = dict(old_line, **new_img)
             csv_writer.writerow(new_line)
