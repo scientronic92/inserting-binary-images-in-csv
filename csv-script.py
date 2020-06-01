@@ -24,9 +24,10 @@ with open('table.csv', 'r') as csv_file:
 
         for old_line in csv_reader:
 
-            new_img = {"images(base64)" : ""}
+            new_img = {"images(base64)" : "None"}
 
             for img in images:
+                
                 # checking if the product code is equal to the image name
                 # without the '.png' format characters
                 if old_line['product_code'] == img[:-4]: 
